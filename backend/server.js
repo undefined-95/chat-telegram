@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const dotenv = require('dotenv');
+const cors = require('cors');
 const { chats } = require('./data/data');
 const { notFound, errorHandler } = require('./middlewares/errorMiddlleware');
 
@@ -8,6 +9,7 @@ dotenv.config();
 const app = express();
 
 app.use(express.json());
+app.use(cors())
 
 app.use(require('./routes/index'));
 

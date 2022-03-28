@@ -66,4 +66,8 @@ module.exports.userController = {
       res.status(400).json(`Не удалось авторизоватсья: ${e.toString()}`);
     }
   },
+
+  allUsers: async (req, res)=>{
+    const keyword = req.query.search
+  }
 };
